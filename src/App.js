@@ -1,10 +1,10 @@
-import { BrowserRouter, Link, Route, Switch } from 'react-router-dom'
+import { BrowserRouter, Link, Route, Switch } from "react-router-dom";
 
 // pages
-import Home from './pages/Home'
-import About from './pages/About'
-import Products from './pages/Products'
-import ProductDetails from './pages/ProductDetails'
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Products from "./pages/Products";
+import ProductDetails from "./pages/ProductDetails";
 
 function App() {
   return (
@@ -30,7 +30,7 @@ function App() {
         </Switch>
       </BrowserRouter>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
