@@ -3,41 +3,48 @@ import CreateTodo from "./components/create-todo.component";
 import EditTodo from "./components/edit-todo.component";
 import TodosList from "./components/todos-list.component";
 
-// pages
-import Home from "./pages/Home";
-import About from "./pages/About";
-import Products from "./pages/Products";
-import ProductDetails from "./pages/ProductDetails";
+import logo from "./logo.png";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   return (
-    <div className="App">
-      <BrowserRouter>
-        <nav>
-          <div className="container">
-            <h2>MERN-Stack Todo App</h2>
+    <BrowserRouter>
+      <div className="container">
+        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+          <a className="navbar-brand" href="https://codingthesmartway.com">
+            <img
+              src={logo}
+              width="30"
+              height="30"
+              alt="CodingTheSmartWay.com"
+            />
+          </a>
+          <Link to="/" className="navbar-brand">
+            MERN-Stack Todo App
+          </Link>
+          <div className="collpase navbar-collapse">
+            <ul className="navbar-nav mr-auto">
+              <li className="navbar-item">
+                <Link to="/" className="nav-link">
+                  Todos
+                </Link>
+              </li>
+              <li className="navbar-item">
+                <Link to="/create" className="nav-link">
+                  Create Todo
+                </Link>
+              </li>
+            </ul>
           </div>
-          {/* <h1>The Ninja Clothing Company</h1>
-          <Link to="/">Home</Link>
-          <Link to="/about">About</Link>
-          <Link to="/products">Products</Link> */}
         </nav>
+
         <Switch>
           <Route exact path="/" component={TodosList} />
           <Route exact path="/edit/:id" component={EditTodo} />
           <Route exact path="/create" component={CreateTodo} />
-          <Route path="/about">
-            <About />
-          </Route>
-          <Route path="/products/:id">
-            <ProductDetails />
-          </Route>
-          <Route path="/products">
-            <Products />
-          </Route>
         </Switch>
-      </BrowserRouter>
-    </div>
+      </div>
+    </BrowserRouter>
   );
 }
 
